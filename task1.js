@@ -1,4 +1,4 @@
-import PromptSync from 'prompt-sync';// const prompt=require('prompt-sync')();
+import PromptSync from 'prompt-sync';
 const prompt = PromptSync();
 
 let size =prompt('Enter the size of array:');
@@ -6,7 +6,7 @@ let arr=new Array(100);
 let unique=new Array(100);
 for(var i=0;i<size;i++)
 {
-    arr[i]=prompt('Enter '+(i+1)+' Element: ');
+    arr[i]=prompt('Enter '+(i+1)+' Element: ');//input from user
 }
 let c,m=0;
 for(let i=0;i<size;i++)
@@ -21,7 +21,7 @@ for(let i=0;i<size;i++)
     }
     if(c==0)
     {
-        unique[m]=arr[i];
+        unique[m]=arr[i];//uinque character
         m++;
     }
 }
@@ -34,7 +34,7 @@ for(var i=0;i<m;i++)
     {
         if(unique[i]==arr[j])
         {
-            count[i]=count[i]+1;
+            count[i]=count[i]+1;//count for number of repetition
            
        }
     }
@@ -47,11 +47,11 @@ for(let i=0;i<m;i++)
         if(count[j]<count[j+1])
         {
             temp1=count[j+1];
-            count[j+1]=count[j];
+            count[j+1]=count[j];//sorts count in descending order
             count[j]=temp1;
 
             temp2=unique[j+1];
-            unique[j+1]=unique[j];
+            unique[j+1]=unique[j];//sorts unique character related to number of repetition in descending order
             unique[j]=temp2;
         }
     }
